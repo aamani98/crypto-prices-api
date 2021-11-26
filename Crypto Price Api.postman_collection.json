@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "3a5a4186-18e1-4873-a666-1ba1709a7ab7",
+		"name": "Crypto Price Api",
+		"description": "REST API to find the prices of Crypto Currencies with User Authentication.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user@gmail.com\",\r\n    \"password\":\"User!123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-crypto-price.herokuapp.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"api-crypto-price",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"User\",\r\n    \"email\":\"user@gmail.com\",\r\n    \"password\":\"User!123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-crypto-price.herokuapp.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"api-crypto-price",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prices",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjFhMTIxMTQzM2U4Mjk3OTViYzY4MjkxIiwiaWF0IjoxNjM3OTQ5NzE2fQ.Pn0syb_d7sIVYCXKZqvT_Mm8R61uiuDGIPWQ-IgNEAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-crypto-price.herokuapp.com/api/prices/",
+					"protocol": "https",
+					"host": [
+						"api-crypto-price",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"prices",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Price of Specific Cryto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjE5YjllMTExOTVhYWVhODc3YTk5YTQ2IiwiaWF0IjoxNjM3OTQ1NTU5fQ.45fJFeIrFEgRSQNkkiPPBHOmjG3jswkOpVzw0X3XX-w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-crypto-price.herokuapp.com/api/prices/BTC",
+					"protocol": "https",
+					"host": [
+						"api-crypto-price",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"prices",
+						"BTC"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
